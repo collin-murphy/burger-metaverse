@@ -17,7 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("connect_button").addEventListener("click", async () => {
         const web3 = await getWeb3()
         const walletAddress = await web3.eth.requestAccounts()
-        document.getElementById("connectStatus").innerHTML = `Your wallet address is ${walletAddress[0]}`
+        const walletBalanceInWei = await web3.eth.getBalance(walletAddress[0])
+        console.log(walletBalanceInWei)
+        document.getElementById("connectStatus").innerHTML = `Your wallet address is ${walletAddress[0]}<br>
+        Your balance is ${walletBalanceInWei} Wei`
         })
    
 })
