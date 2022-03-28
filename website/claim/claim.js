@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const web3 = await getWeb3()
         const walletAddress = await web3.eth.requestAccounts()
-        const walletAddressString = walletAddress[0].split('0x')[1]
+        const walletAddressString = walletAddress[0]
         const walletBalanceInWei = await web3.eth.getBalance(walletAddress[0])
         var header = document.getElementById("header")
         var status = document.getElementById("connectStatus")
