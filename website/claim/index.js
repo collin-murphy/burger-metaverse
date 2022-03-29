@@ -24,29 +24,10 @@ function addButtonFunction(element) {
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("connectButton").addEventListener("click", async () => {
         removeElement("connectButton")
-        addButtonFunction("buttonChange")
-
         const web3 = await getWeb3()
         //const web3 = new Web3('https://speedy-nodes-nyc.moralis.io/dc36e5cdc03c5c020090a0e8/eth/ropsten');
 
-        const walletAddress = await web3.eth.requestAccounts()
-        web3.eth.getNodeInfo().then(console.log)
-        const walletAddressString = walletAddress[0]
-        const walletBalanceInWei = await web3.eth.getBalance(walletAddress[0])
-        var header = document.getElementById("header")
-        var info = document.getElementById("connectStatus")
-
-        header.innerHTML = 'Wallet connected'
-        info.innerHTML = `Your wallet address is ${walletAddressString}<br>
-        Your balance is ${walletBalanceInWei} Wei`
-        document.getElementById("claimButton").addEventListener("click", async () => {
-            removeElement('claimButton')
-            removeElement('connectStatus')
-            header.innerHTML = `10 burger coins put in wallet ${walletAddressString}`
-
-            console.log("sneed")
-        })
-
+        //switch networks
         try {
             await ethereum.request({
                 method: 'wallet_switchEthereumChain',
@@ -72,6 +53,35 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // handle other "switch" errors
         }
+ 
+
+        //get all of the information from the wallet
+        var currentChain = await web3.eth.getChainId()
+        if(currentChain == 3){
+            currentChain = 'ropsten'
+        } else {
+            currentChain= `Chain 0x${currentChainId}`
+        }
+        const walletAddress = await web3.eth.requestAccounts()
+        web3.eth.getNodeInfo().then(console.log)
+        const walletAddressString = walletAddress[0]
+        const walletBalanceInWei = await web3.eth.getBalance(walletAddress[0])
+        var header = document.getElementById("header")
+        var info = document.getElementById("connectStatus")
+
+        addButtonFunction("buttonChange")
+        header.innerHTML = 'Wallet connected'
+        info.innerHTML = `Your wallet address is ${walletAddressString}<br>
+        Your balance is ${walletBalanceInWei} Wei<br>
+        You are connected to ${currentChain}`
+
+        document.getElementById("claimButton").addEventListener("click", async () => {
+            removeElement('claimButton')
+            removeElement('connectStatus')
+            header.innerHTML = `10 burger coins put in wallet ${walletAddressString}`
+
+            console.log("sneed")
+        })
 
 
     })
