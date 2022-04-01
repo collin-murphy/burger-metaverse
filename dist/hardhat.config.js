@@ -27,9 +27,11 @@ const dotenv = __importStar(require("dotenv"));
 const config_1 = require("hardhat/config");
 require("@nomiclabs/hardhat-etherscan");
 require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-ethers");
 require("@typechain/hardhat");
 require("hardhat-gas-reporter");
 require("solidity-coverage");
+require("hardhat-tracer");
 dotenv.config();
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -39,21 +41,30 @@ dotenv.config();
         console.log(account.address);
     }
 });
+const { API_URL, PRIVATE_KEY } = process.env;
 // You need to export an object to set up your config
 // Go to https://hardhat.org/config/ to learn more
 const config = {
     solidity: "0.8.11",
     networks: {
         hardhat: {},
+        testnet: {
+            url: API_URL,
+            chainId: 97,
+            gasPrice: "auto",
+            accounts: ['c2a948718a3ad39b33f70d833eec930cf5f0a735a823f683b33f5370aef9454a']
+        },
         ropsten: {
-            url: process.env.ROPSTEN_URL || "",
-            accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+            url: API_URL,
+            accounts: [`0x${PRIVATE_KEY}`]
         },
     },
+    /*
     gasReporter: {
-        enabled: process.env.REPORT_GAS !== undefined,
-        currency: "USD",
+      enabled: process.env.REPORT_GAS !== undefined,
+      currency: "USD",
     },
+    */
     etherscan: {
         apiKey: process.env.ETHERSCAN_API_KEY,
     },

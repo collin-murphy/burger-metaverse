@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/contracts/BurgerToken.sol": {
-      "lastModificationDate": 1647725165786,
-      "contentHash": "7937282be3ce64cb6d2f8162154c844d",
+      "lastModificationDate": 1648789534229,
+      "contentHash": "6c0ab0a5dbd27ee0f77f81156be2f7f3",
       "sourceName": "contracts/BurgerToken.sol",
       "solcConfig": {
         "version": "0.8.11",
@@ -35,7 +35,7 @@
         "^0.8.11"
       ],
       "artifacts": [
-        "BurgerToken"
+        "BurgerCoin"
       ]
     },
     "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
@@ -75,6 +75,41 @@
       ],
       "artifacts": [
         "ERC20"
+      ]
+    },
+    "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1648182521032,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.11",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
       ]
     },
     "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
@@ -184,46 +219,9 @@
         "Context"
       ]
     },
-    "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
-      "lastModificationDate": 1648333026233,
-      "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
-      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
-      "solcConfig": {
-        "version": "0.8.11",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          }
-        }
-      },
-      "imports": [
-        "../utils/Context.sol"
-      ],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "Ownable"
-      ]
-    },
     "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/contracts/NFT.sol": {
-      "lastModificationDate": 1648694380237,
-      "contentHash": "f1f5f9c83f93889896639ca73c796667",
+      "lastModificationDate": 1648704735126,
+      "contentHash": "77675c9d0566c8ec1154d705e6b2f379",
       "sourceName": "contracts/NFT.sol",
       "solcConfig": {
         "version": "0.8.11",
@@ -252,7 +250,8 @@
         "@openzeppelin/contracts/token/ERC721/ERC721.sol",
         "@openzeppelin/contracts/utils/Counters.sol",
         "@openzeppelin/contracts/access/Ownable.sol",
-        "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol"
+        "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol",
+        "hardhat/console.sol"
       ],
       "versionPragmas": [
         "^0.8.0"
@@ -337,6 +336,43 @@
       ],
       "artifacts": [
         "Counters"
+      ]
+    },
+    "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1648333026233,
+      "contentHash": "8398972af73b4e9e5ff3b31cad86234f",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.11",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "Ownable"
       ]
     },
     "/Users/jakeshearer/Desktop/HORCHATA/Projects/burgerchild/node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol": {

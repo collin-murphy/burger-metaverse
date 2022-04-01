@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
  * `ERC20` functions.
  * Based on https://github.com/OpenZeppelin/openzeppelin-contracts/blob/v2.5.1/contracts/examples/SimpleToken.sol
  */
-contract BurgerToken is ERC20 {
+contract BurgerCoin is ERC20 {
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
@@ -19,7 +19,7 @@ contract BurgerToken is ERC20 {
         string memory name,
         string memory symbol,
         uint256 initialSupply
-    ) public ERC20(name, symbol) {
+    ) ERC20(name, symbol) {
         _mint(msg.sender, initialSupply);
     }
 }

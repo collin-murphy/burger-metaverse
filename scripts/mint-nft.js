@@ -1,6 +1,6 @@
 require("dotenv").config()
 //const { detectEthereumProvider } = require("@metamask/detect-provider")
-const TOKEN_URI = "https://gateway.pinata.cloud/ipfs/QmVe7EUzuhy97jbpz2D48CFcR9iCrYPbfxDGub2q1bNFhn"
+const TOKEN_URI = "https://gateway.pinata.cloud/ipfs/QmdpgdDsuU3E2H57nych8WJHxF47HBB6FhaCKz56u5K5ps"
 const API_URL = process.env.API_URL
 const PUBLIC_KEY = process.env.PUBLIC_KEY
 const PRIVATE_KEY = process.env.PRIVATE_KEY
